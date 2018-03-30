@@ -9,7 +9,7 @@
 			"modernui" : 1
 		}
 ,
-		"rect" : [ 344.0, 87.0, 1062.0, 779.0 ],
+		"rect" : [ 548.0, 87.0, 1062.0, 779.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -37,6 +37,72 @@
 		"style" : "",
 		"subpatcher_template" : "",
 		"boxes" : [ 			{
+				"box" : 				{
+					"id" : "obj-54",
+					"linecount" : 2,
+					"maxclass" : "message",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 239.0, 1126.0, 183.0, 35.0 ],
+					"style" : "",
+					"text" : "image_surface_create img $1, image_surface_draw img, bang"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-52",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 2,
+					"outlettype" : [ "jit_matrix", "" ],
+					"patching_rect" : [ 239.0, 1181.0, 125.0, 22.0 ],
+					"style" : "",
+					"text" : "jit.mgraphics 320 240"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-51",
+					"maxclass" : "toggle",
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"outlettype" : [ "int" ],
+					"parameter_enable" : 0,
+					"patching_rect" : [ 143.0, 1090.0, 24.0, 24.0 ],
+					"style" : ""
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-41",
+					"maxclass" : "newobj",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "bang" ],
+					"patching_rect" : [ 143.0, 1144.0, 58.0, 22.0 ],
+					"style" : "",
+					"text" : "metro 30"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-33",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 2,
+					"outlettype" : [ "bang", "" ],
+					"patching_rect" : [ 239.0, 1236.0, 63.0, 22.0 ],
+					"style" : "",
+					"text" : "jit.window"
+				}
+
+			}
+, 			{
 				"box" : 				{
 					"fontname" : "Arial",
 					"fontsize" : 12.0,
@@ -188,7 +254,7 @@
 					"autopopulate" : 1,
 					"fontsize" : 13.0,
 					"id" : "obj-42",
-					"items" : [ "images (2).jpeg", ",", "download.jpeg", ",", "images.jpeg", ",", "download (1).jpeg", ",", "images (1).jpeg", ",", "28172122.jpg" ],
+					"items" : [ "IMG_1286_130508.jpg", ",", "sand-dunes-30731-31454-hd-wallpapers.jpg", ",", "1496844410150.jpg", ",", "28172122.jpg", ",", "sand-dunes-wallpapers-696x435.jpg", ",", "sand-dunes-death-valley.jpg" ],
 					"maxclass" : "umenu",
 					"numinlets" : 1,
 					"numoutlets" : 3,
@@ -222,8 +288,8 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "jit_matrix" ],
-					"patching_rect" : [ 426.0, 1133.0, 344.0, 259.0 ],
-					"pic" : "Macintosh HD:/Users/lucaswhite/Documents/NYU_Spring18/InterInst/sandMonster.jpeg"
+					"patching_rect" : [ 426.0, 1099.0, 344.0, 259.0 ],
+					"pic" : "Macintosh HD:/Users/lucaswhite/Documents/NYU_Spring18/InterInst/sandDunes/sand-dunes-30731-31454-hd-wallpapers.jpg"
 				}
 
 			}
@@ -401,7 +467,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 2,
 					"outlettype" : [ "float", "" ],
-					"patching_rect" : [ 76.0, 602.0, 37.0, 22.0 ],
+					"patching_rect" : [ 76.0, 603.0, 37.0, 22.0 ],
 					"style" : "",
 					"text" : "timer"
 				}
@@ -628,7 +694,7 @@
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 76.0, 520.0, 90.0, 22.0 ],
 					"style" : "",
-					"text" : "5 3"
+					"text" : "4 7"
 				}
 
 			}
@@ -1433,6 +1499,13 @@
 			}
 , 			{
 				"patchline" : 				{
+					"destination" : [ "obj-52", 0 ],
+					"source" : [ "obj-41", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
 					"destination" : [ "obj-47", 0 ],
 					"midpoints" : [ 592.0, 897.0, 618.5, 897.0 ],
 					"source" : [ "obj-42", 2 ]
@@ -1443,6 +1516,15 @@
 				"patchline" : 				{
 					"destination" : [ "obj-48", 0 ],
 					"midpoints" : [ 526.75, 1032.0, 435.5, 1032.0 ],
+					"order" : 0,
+					"source" : [ "obj-42", 1 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-54", 0 ],
+					"order" : 1,
 					"source" : [ "obj-42", 1 ]
 				}
 
@@ -1475,6 +1557,15 @@
 				"patchline" : 				{
 					"destination" : [ "obj-43", 0 ],
 					"midpoints" : [ 435.5, 1074.0, 435.5, 1074.0 ],
+					"order" : 0,
+					"source" : [ "obj-48", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-54", 0 ],
+					"order" : 1,
 					"source" : [ "obj-48", 0 ]
 				}
 
@@ -1484,6 +1575,27 @@
 					"destination" : [ "obj-22", 0 ],
 					"midpoints" : [ 304.5, 951.0, 412.5, 951.0 ],
 					"source" : [ "obj-49", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-41", 0 ],
+					"source" : [ "obj-51", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-33", 0 ],
+					"source" : [ "obj-52", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-52", 0 ],
+					"source" : [ "obj-54", 0 ]
 				}
 
 			}
@@ -1499,6 +1611,15 @@
 				"patchline" : 				{
 					"destination" : [ "obj-48", 0 ],
 					"midpoints" : [ 85.5, 1041.0, 435.5, 1041.0 ],
+					"order" : 0,
+					"source" : [ "obj-58", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-54", 0 ],
+					"order" : 1,
 					"source" : [ "obj-58", 0 ]
 				}
 
@@ -1545,9 +1666,9 @@
 			}
  ],
 		"dependency_cache" : [ 			{
-				"name" : "sandMonster.jpeg",
-				"bootpath" : "~/Documents/NYU_Spring18/InterInst",
-				"patcherrelativepath" : ".",
+				"name" : "sand-dunes-30731-31454-hd-wallpapers.jpg",
+				"bootpath" : "~/Documents/NYU_Spring18/InterInst/sandDunes",
+				"patcherrelativepath" : "./sandDunes",
 				"type" : "JPEG",
 				"implicit" : 1
 			}
